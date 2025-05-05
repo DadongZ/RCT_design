@@ -1,0 +1,479 @@
+---
+title: "Phase I/II Clinical Trial Design for an Immunotherapy for NSCLC (Draft)"
+author: "Dadong Zhang"
+format: 
+  pdf:
+    toc: true
+    number-sections: true
+    colorlinks: true
+editor: visual
+---
+
+## 1. INTRODUCTION
+
+### 1.1 Study Background and Rationale
+
+The immunotherapy represent complex therapeutic modalities with unique challenges for early phase clinical development. Traditional designs that focus solely on toxicity (3+3 design) or independently evaluate efficacy and toxicity fail to capture the nuanced benefit-risk profile of these agents. This protocol implements an integrated Phase I/II design using the Bayesian Optimal Interval design for Phase I/II trials (BOIN12) with embedded pharmacokinetic/pharmacodynamic (PK/PD) assessments to efficiently identify both the maximum tolerated dose (MTD) and optimal biological dose (OBD).
+
+The BOIN12 design offers several advantages: - Simultaneous evaluation of toxicity and efficacy endpoints - Adaptive allocation of patients to promising dose levels - Transparent decision rules with minimal operational complexity - Ability to incorporate prior information through Bayesian framework - Seamless transition from Phase I to Phase II
+
+Integration of PK/PD assessments further enhances the design by providing mechanistic understanding of exposure-response relationships, which is particularly important for ADCs where target engagement, linker stability, and payload delivery are critical determinants of efficacy and toxicity.
+
+### 1.2 Study Objectives
+
+**Primary Objectives:** - To determine the MTD of \[STUDY DRUG\] based on dose-limiting toxicities (DLTs) - To identify the OBD of \[STUDY DRUG\] based on efficacy and toxicity outcomes
+
+**Secondary Objectives:** - To characterize the PK profile of \[STUDY DRUG\] - To evaluate PD biomarkers associated with \[STUDY DRUG\] activity - To assess preliminary anti-tumor activity - To evaluate the safety and tolerability of \[STUDY DRUG\] - To establish exposure-response relationships for efficacy and safety endpoints
+
+## 2. STUDY DESIGN
+
+### 2.1 Overview
+
+This is an open-label, multicenter, Phase I/II dose-finding study with an integrated BOIN12 design and PK/PD assessment. The study consists of two seamlessly integrated parts:
+
+**Part 1: Dose Escalation** - Primary endpoint: DLT during first treatment cycle - Secondary endpoint: Early efficacy signals based on biomarkers - PK/PD assessments at all dose levels
+
+**Part 2: Cohort Expansion** - Primary endpoint: Objective response rate (ORR) - Secondary endpoints: PFS, OS, DoR, safety, PK/PD
+
+### 2.2 Dose Levels and Escalation Strategy
+
+A total of 6-8 dose levels will be evaluated: - Dose Level 1: Starting dose (0.3 mg/kg) - Dose Level 2: 0.6 mg/kg - Dose Level 3: 1.2 mg/kg - Dose Level 4: 2.4 mg/kg - Dose Level 5: 3.6 mg/kg - Dose Level 6: 4.8 mg/kg - Dose Level 7: 6.0 mg/kg - Dose Level 8: 7.2 mg/kg
+
+The starting dose is selected based on preclinical toxicology data, applying a 1/6th scaling factor from the highest non-severely toxic dose in non-human primates.
+
+### 2.3 BOIN12 Design Specifications
+
+#### 2.3.1 Toxicity Assessment
+
+-   Target DLT rate: 30%
+-   DLT evaluation window: 21 days (Cycle 1)
+-   Toxicity boundaries for dose escalation/de-escalation:
+    -   λe (escalation boundary): 0.236
+    -   λd (de-escalation boundary): 0.358
+
+#### 2.3.2 Efficacy Assessment
+
+-   Binary efficacy endpoint: Objective response (OR) per RECIST v1.1
+-   Target response rate: 30%
+-   Efficacy boundaries for dose selection:
+    -   πe (efficacy lower boundary): 0.15
+    -   πt (efficacy target): 0.30
+
+#### 2.3.3 Utility Function for OBD Determination
+
+The utility function balances efficacy and toxicity:
+
+U(p,q) = p - w × q
+
+Where: - p = probability of efficacy at a dose level - q = probability of toxicity at a dose level - w = toxicity weight (0.5 for this study)
+
+The OBD is defined as the dose with the highest utility.
+
+## 3. ENROLLMENT PROCEDURE
+
+### 3.1 Cohort Size and Escalation Rules
+
+-   Initial cohort: 3 patients per dose level
+-   Subsequent cohorts: 3-6 patients per dose level based on observed toxicity
+-   Escalation decisions based on BOIN12 boundaries:
+    -   If observed DLT rate ≤ λe: Escalate to next dose level
+    -   If observed DLT rate ≥ λd: De-escalate to previous dose level
+    -   If λe \< observed DLT rate \< λd: Stay at current dose level
+
+### 3.2 Accelerated Titration Phase
+
+-   Single-patient cohorts until first DLT or significant (Grade 2+) treatment-related toxicity
+-   Revert to standard 3+3 cohorts once toxicity is observed
+
+### 3.3 Cohort Expansion Rules
+
+-   Expand up to 3 dose levels (MTD and 2 lower doses) with at least 12 patients each
+-   Adaptive randomization allocates patients based on posterior probabilities of optimal utility
+-   Maximum sample size: 60 patients (15-24 in dose escalation; 36-45 in expansion)
+
+### 3.4 Early Stopping Rules
+
+-   Stop for excessive toxicity if Pr(DLT rate \> 0.33) \> 0.95
+-   Stop enrolling at a dose if Pr(ORR \< 0.10) \> 0.90 after 9 patients
+
+## 4. STATISTICAL METHODS
+
+### 4.1 Sample Size Determination
+
+Using simulation studies, a maximum sample size of 60 patients provides: - 85% power to identify the true MTD - 80% power to identify the true OBD - 70% power to identify both MTD and OBD correctly - Expected number of patients treated at optimal doses: 35
+
+### 4.2 Prior Distributions
+
+#### 4.2.1 Toxicity Priors
+
+-   $Beta(1,1)$ prior for the probability of DLT at each dose level
+-   No borrowing of information across dose levels (independent priors)
+
+#### 4.2.2 Efficacy Priors
+
+-   $Beta(0.5,0.5)$ prior for the probability of response at each dose level
+-   Monotonicity assumption: Response probability is non-decreasing with dose
+
+### 4.3 Posterior Calculations
+
+Posterior distributions for toxicity and efficacy parameters will be updated after each cohort using Bayes' theorem:
+
+For toxicity at dose level d: $p(θd | data) ∝ p(data | θd) × p(θd)$
+
+Where: - $θd$ is the probability of DLT at dose d - $p(θd)$ is the prior distribution (Beta) - $p(data | θd)$ is the likelihood function (Binomial) - $p(θd | data)$ is the posterior distribution (Beta)
+
+Similar calculations will be performed for efficacy parameters.
+
+### 4.4 Dose-Toxicity and Dose-Response Modeling
+
+After all patients have been enrolled, more complex models will be fitted:
+
+#### 4.4.1 Dose-Toxicity Model
+
+Two-parameter logistic model: $logit(πTox(d)) = α0 + α1 × log(d/d*)$
+
+Where: - $πTox(d)$ is the probability of DLT at dose d - $d*$ is a reference dose - $α0$, $α1$ are parameters to be estimated
+
+#### 4.4.2 Dose-Response Model
+
+Emax model: $πEff(d) = E0 + Emax × d / (ED50 + d)$
+
+Where: - $πEff(d)$ is the probability of response at dose d - $E0$ is the baseline effect - $Emax$ is the maximum effect - $ED50$ is the dose producing 50% of maximum effect
+
+### 4.5 Interim Analysis
+
+Interim analyses will be conducted after: - Every 3 new patients during dose escalation - Every 6 new patients during cohort expansion
+
+Decisions at interim analyses will be based on: - Posterior probabilities of DLT rates - Posterior probabilities of response rates - Posterior means of utility functions
+
+## 5. PK/PD INTEGRATION
+
+### 5.1 PK Sampling Schedule
+
+-   Intensive PK: Cycles 1-2 (pre-dose, 0.5h, 1h, 2h, 4h, 8h, 24h, 48h, 72h, 168h post-dose)
+-   Sparse PK: Cycles 3+ (pre-dose, 1h, 48h post-dose)
+
+### 5.2 PD Biomarker Assessment
+
+-   Target engagement: Pre-dose and days 2, 8, 15 of cycle 1
+-   Immune activation markers: Pre-dose and days 8, 15 of cycle 1
+-   Circulating tumor DNA: Pre-dose and day 15 of cycles 1-3
+
+### 5.3 PK/PD Modeling Approach
+
+#### 5.3.1 Population PK Analysis
+
+Two-compartment model with target-mediated drug disposition: - Clearance (CL) - Volume of distribution (Vd) - Inter-compartmental clearance (Q) - Peripheral volume (Vp) - Target-mediated elimination parameters
+
+#### 5.3.2 Exposure-Response Analysis
+
+-   Exposure metrics: AUC, Cmax, Ctrough, Time \> threshold
+-   Efficacy relationship: Emax or logistic models
+-   Toxicity relationship: Logistic regression models
+
+#### 5.3.3 PK/PD Model Integration with BOIN12
+
+-   Exposure metrics will be calculated for each patient after cycle 1
+-   Exposure-adjusted utility function incorporating predicted AUC: U(p,q,AUC) = p - w × q × f(AUC) Where f(AUC) accounts for increased toxicity risk with higher exposure
+
+## 6. DATA ANALYSIS PLAN
+
+### 6.1 Analysis Populations
+
+-   Safety population: All patients receiving ≥1 dose
+-   DLT-evaluable population: Patients completing DLT evaluation period
+-   Efficacy-evaluable population: Patients with baseline and ≥1 post-baseline assessment
+-   PK population: Patients with sufficient PK samples
+-   PD population: Patients with sufficient PD samples
+
+### 6.2 Primary Analyses
+
+#### 6.2.1 MTD Determination
+
+-   Final MTD estimate based on isotonic regression of posterior estimates
+-   Credible intervals using Bayesian highest posterior density (HPD) approach
+
+#### 6.2.2 OBD Determination
+
+-   OBD defined as dose maximizing posterior mean utility
+-   Probability of being optimal dose reported with 95% credible intervals
+
+### 6.3 Secondary Analyses
+
+#### 6.3.1 Efficacy Analysis
+
+-   ORR with exact binomial 95% confidence intervals
+-   Kaplan-Meier estimates for time-to-event endpoints
+-   Waterfall plots of best percentage change from baseline
+
+#### 6.3.2 Safety Analysis
+
+-   Summaries of adverse events by dose, grade, and relationship
+-   Exposure-adjusted event rates
+-   Time-to-onset and duration of key toxicities
+
+#### 6.3.3 PK Analysis
+
+-   Non-compartmental analysis for each dose level
+-   Population PK parameters and inter-individual variability
+-   Factors affecting PK variability
+
+#### 6.3.4 PK/PD Analysis
+
+-   Exposure-response relationships for efficacy
+-   Exposure-toxicity relationships
+-   Target engagement and pathway modulation
+
+### 6.4 Exploratory Analyses
+
+-   Biomarker changes associated with response
+-   Tumor and immune microenvironment changes
+-   Mechanisms of primary and acquired resistance
+
+## 7. STATISTICAL SOFTWARE
+
+-   Primary BOIN12 implementation: R package `BOIN12`
+-   Bayesian computations: R packages `rjags` and `R2WinBUGS`
+-   PK/PD modeling: NONMEM v7.4 and Phoenix WinNonlin
+-   General statistical analysis: SAS v9.4 and R v4.1.0
+
+## 8. STATISTICAL FUNCTIONS SUPPORTING THE DESIGN
+
+### 8.1 BOIN12 Core Functions
+
+```{r}
+# BOIN12 decision boundaries calculation
+get_boin12_boundaries <- function(target_tox, target_eff, alpha=0.05, beta=0.2) {
+  # Calculate lambda_e and lambda_d for toxicity
+  lambda_e <- target_tox - 0.05 - 0.05*target_tox
+  lambda_d <- target_tox + 0.05 + 0.05*target_tox
+  
+  # Calculate efficacy boundaries
+  pi_e <- target_eff/2
+  
+  return(list(lambda_e=lambda_e, lambda_d=lambda_d, pi_e=pi_e, pi_t=target_eff))
+}
+
+# BOIN12 decision function
+boin12_decision <- function(n_patients, n_dlt, n_response, boundaries) {
+  # Extract boundaries
+  lambda_e <- boundaries$lambda_e
+  lambda_d <- boundaries$lambda_d
+  pi_e <- boundaries$pi_e
+  
+  # Calculate observed rates
+  p_tox <- n_dlt/n_patients
+  p_eff <- n_response/n_patients
+  
+  # Make decisions
+  if (p_tox <= lambda_e && n_patients >= 3) {
+    tox_decision <- "Escalate"
+  } else if (p_tox >= lambda_d) {
+    tox_decision <- "De-escalate"
+  } else {
+    tox_decision <- "Stay"
+  }
+  
+  # Efficacy decision
+  if (p_eff < pi_e && n_patients >= 9) {
+    eff_decision <- "Futile"
+  } else {
+    eff_decision <- "Continue"
+  }
+  
+  return(list(tox_decision=tox_decision, eff_decision=eff_decision))
+}
+
+# Utility function calculation
+calculate_utility <- function(p_eff, p_tox, w=0.5) {
+  utility <- p_eff - w*p_tox
+  return(utility)
+}
+
+# Posterior probability calculation
+posterior_prob <- function(n_patients, n_events, prior_a=1, prior_b=1) {
+  post_a <- prior_a + n_events
+  post_b <- prior_b + n_patients - n_events
+  
+  # Mean of posterior distribution
+  post_mean <- post_a/(post_a + post_b)
+  
+  # 95% credible interval
+  post_lower <- qbeta(0.025, post_a, post_b)
+  post_upper <- qbeta(0.975, post_a, post_b)
+  
+  return(list(mean=post_mean, lower=post_lower, upper=post_upper))
+}
+```
+
+### 8.2 PK/PD Integration Functions
+
+```{r}
+# Calculate exposure metrics from concentration-time data
+calculate_exposure <- function(conc, time) {
+  # Area under the curve using trapezoidal rule
+  auc <- sum(diff(time) * (conc[-1] + conc[-length(conc)])/2)
+  
+  # Maximum concentration
+  cmax <- max(conc)
+  
+  # Time above threshold (50% of target saturation concentration)
+  threshold <- 10 # ng/mL, example threshold
+  time_above <- sum(diff(time)[conc[-1] > threshold])
+  
+  return(list(auc=auc, cmax=cmax, time_above=time_above))
+}
+
+# Exposure-adjusted utility function
+exposure_adjusted_utility <- function(p_eff, p_tox, auc, auc_reference=100, w=0.5) {
+  # Adjustment factor based on AUC ratio
+  auc_factor <- (auc/auc_reference)^0.5
+  
+  # Adjust toxicity weight by exposure
+  adjusted_w <- w * auc_factor
+  
+  # Calculate utility
+  utility <- p_eff - adjusted_w*p_tox
+  
+  return(utility)
+}
+```
+
+### 8.3 Simulation Functions
+
+```{r}
+# Simulate trial with BOIN12 design
+simulate_boin12_trial <- function(
+  true_tox_rates,
+  true_eff_rates,
+  target_tox=0.3,
+  target_eff=0.3,
+  cohort_size=3,
+  max_sample=60,
+  w=0.5,
+  seed=42) {
+  
+  set.seed(seed)
+  
+  # Calculate boundaries
+  boundaries <- get_boin12_boundaries(target_tox, target_eff)
+  
+  # Initialize variables
+  n_doses <- length(true_tox_rates)
+  current_dose <- 1
+  patients_per_dose <- rep(0, n_doses)
+  dlts_per_dose <- rep(0, n_doses)
+  responses_per_dose <- rep(0, n_doses)
+  total_patients <- 0
+  
+  # Run trial
+  while (total_patients < max_sample && current_dose <= n_doses && current_dose >= 1) {
+    # Enroll cohort at current dose
+    n_cohort <- min(cohort_size, max_sample - total_patients)
+    if (n_cohort <= 0) break
+    
+    # Generate toxicity outcomes
+    new_dlts <- rbinom(1, n_cohort, true_tox_rates[current_dose])
+    
+    # Generate efficacy outcomes
+    new_responses <- rbinom(1, n_cohort, true_eff_rates[current_dose])
+    
+    # Update counts
+    patients_per_dose[current_dose] <- patients_per_dose[current_dose] + n_cohort
+    dlts_per_dose[current_dose] <- dlts_per_dose[current_dose] + new_dlts
+    responses_per_dose[current_dose] <- responses_per_dose[current_dose] + new_responses
+    total_patients <- total_patients + n_cohort
+    
+    # Make decision
+    decision <- boin12_decision(
+      patients_per_dose[current_dose],
+      dlts_per_dose[current_dose],
+      responses_per_dose[current_dose],
+      boundaries
+    )
+    
+    # Update dose level based on toxicity decision
+    if (decision$tox_decision == "Escalate" && current_dose < n_doses) {
+      current_dose <- current_dose + 1
+    } else if (decision$tox_decision == "De-escalate" && current_dose > 1) {
+      current_dose <- current_dose - 1
+    }
+    # else stay at current dose
+  }
+  
+  # Calculate posterior estimates
+  tox_posteriors <- lapply(1:n_doses, function(d) {
+    posterior_prob(patients_per_dose[d], dlts_per_dose[d])
+  })
+  
+  eff_posteriors <- lapply(1:n_doses, function(d) {
+    posterior_prob(patients_per_dose[d], responses_per_dose[d], prior_a=0.5, prior_b=0.5)
+  })
+  
+  # Calculate utilities
+  utilities <- sapply(1:n_doses, function(d) {
+    if (patients_per_dose[d] == 0) return(NA)
+    calculate_utility(eff_posteriors[[d]]$mean, tox_posteriors[[d]]$mean, w)
+  })
+  
+  # Identify MTD and OBD
+  mtd <- which.max(sapply(1:n_doses, function(d) {
+    if (patients_per_dose[d] == 0) return(-Inf)
+    if (tox_posteriors[[d]]$mean > target_tox) return(-Inf)
+    -abs(tox_posteriors[[d]]$mean - target_tox)
+  }))
+  
+  obd <- which.max(utilities)
+  
+  return(list(
+    patients_per_dose = patients_per_dose,
+    dlts_per_dose = dlts_per_dose,
+    responses_per_dose = responses_per_dose,
+    tox_posteriors = tox_posteriors,
+    eff_posteriors = eff_posteriors,
+    utilities = utilities,
+    mtd = mtd,
+    obd = obd
+  ))
+}
+```
+
+## 9. IMPLEMENTATION PROCEDURE
+
+### 9.1 Data Collection and Management
+
+-   Electronic data capture (EDC) system with real-time BOIN12 calculations
+-   PK/PD data integration through laboratory data management system
+-   Structured case report forms with validation rules
+-   Weekly data review and cleaning
+
+### 9.2 Decision-Making Process
+
+1.  Data cutoff for each cohort
+2.  Statistical team calculates posterior probabilities and utility values
+3.  Safety Review Committee (SRC) reviews results and makes recommendations
+4.  Sponsor final decision on dose escalation/de-escalation/expansion
+
+### 9.3 Documentation Requirements
+
+-   SRC meeting minutes with dose decisions
+-   Statistical reports at each interim analysis
+-   Updated exposure-response analyses after cohort completion
+
+### 9.4 Timeline for Analysis Updates
+
+-   Weekly enrollment updates
+-   Biweekly safety reports
+-   Monthly PK/PD analyses
+-   Interim analyses after each cohort
+
+## 10. CONCLUSION
+
+This statistical analysis plan outlines a comprehensive approach to dose finding for an ADC/immunotherapy using the BOIN12 design integrated with PK/PD assessment. The design balances several key objectives:
+
+-   Efficient identification of both MTD and OBD
+-   Integration of mechanistic understanding through PK/PD modeling
+-   Adaptive allocation of patients to promising doses
+-   Robust statistical methodology with clear decision rules
+
+The seamless transition between dose escalation and cohort expansion phases minimizes development time while maximizing information gain. Through simulation studies, this design has demonstrated high probability of correctly identifying optimal doses while minimizing the number of patients treated at suboptimal doses.

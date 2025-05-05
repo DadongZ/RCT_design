@@ -1,0 +1,476 @@
+---
+title: "STATISTICAL ANALYSIS PLAN: Phase I/II Study of CAN001 (PARP Inhibitor) in Combination with Bevacizumab for First-Line Maintenance Therapy in HRD-Positive High-Grade Serous Ovarian Cancer (HGSOC) Following Response from Chemotherapy and Bevacizumab Treatment"
+author: "Dadong Zhang"
+format: 
+  pdf:
+    toc: true
+    number-sections: true
+    colorlinks: true
+editor: visual
+---
+
+**Protocol Title:** A Phase I/II Study of CAN001 (PARP Inhibitor) in Combination with Bevacizumab for First-Line Maintenance Therapy in HRD-Positive High-Grade Serous Ovarian Cancer (HGSOC) Following Response from Chemotherapy and Bevacizumab Treatment
+
+**Protocol Number:** CAN001-101
+
+**Version:** 1.0
+
+**Release Date:** TBD
+
+{{< pagebreak >}}
+
+## 1. INTRODUCTION
+
+### 1.1 Study Background
+
+CAN001 is a novel poly(ADP-ribose) polymerase (PARP) inhibitor that has completed pre-clinical development and received Investigational New Drug (IND) approval. This study will evaluate CAN001 in combination with bevacizumab as first-line maintenance therapy in patients with homologous recombination deficiency (HRD)-positive high-grade serous ovarian cancer (HGSOC) who have achieved a response following platinum-based chemotherapy and bevacizumab treatment.
+
+The rationale for this combination is based on several observations:
+
+1.  PARP inhibitors have demonstrated significant efficacy in HRD-positive ovarian cancer, particularly in tumors with BRCA1/BRCA2 mutations
+2.  The combination of olaparib and bevacizumab has shown synergistic activity and improved progression-free survival (PFS) in HRD-positive HGSOC (PAOLA-1 trial)
+3.  Bevacizumab may induce tumor hypoxia, potentially enhancing HRD and increasing sensitivity to PARP inhibition
+4.  The combination targets complementary pathways critical for cancer cell survival
+
+### 1.2 Study Objectives
+
+#### 1.2.1 Primary Objectives
+
+**Phase I:** - To determine the maximum tolerated dose (MTD) and/or optimal biological dose (OBD) of CAN001 when administered in combination with bevacizumab
+
+**Phase II:** - To evaluate the preliminary efficacy of CAN001 in combination with bevacizumab as measured by objective response rate (ORR)
+
+#### 1.2.2 Secondary Objectives
+
+-   To characterize the safety and tolerability profile of CAN001 in combination with bevacizumab
+-   To evaluate progression-free survival (PFS)
+-   To assess duration of response (DOR)
+-   To assess overall survival (OS)
+-   To determine pharmacokinetic (PK) parameters of CAN001 when administered in combination with bevacizumab
+-   To evaluate pharmacodynamic (PD) biomarkers and establish exposure-response relationships
+-   To assess patient-reported outcomes (PROs)
+
+### 1.3 Study Design
+
+This is a Phase I/II, open-label, dose-finding and expansion study of CAN001 in combination with bevacizumab in patients with HRD-positive HGSOC who have achieved a complete or partial response following first-line platinum-based chemotherapy plus bevacizumab.
+
+**Phase I (Dose Finding):** - The utility-based Bayesian optimal interval (U-BOIN) design will be used to identify the optimal biological dose (OBD) based on both toxicity and efficacy - U-BOIN is a seamless two-stage design that evaluates both safety and preliminary efficacy - Sequential cohorts of patients will be treated with escalating doses of CAN001 in combination with a fixed standard dose of bevacizumab (15 mg/kg IV every 3 weeks) - CAN001 will be administered orally twice daily in 28-day cycles - Starting dose will be 100 mg BID with planned escalation to 200 mg BID, 300 mg BID, and 400 mg BID - Dose-limiting toxicities (DLTs) will be evaluated during the first cycle (28 days) - Preliminary efficacy will be assessed based on RECIST v1.1 criteria - PK and PD assessments will be conducted to characterize exposure-response relationships
+
+**Phase II (Dose Expansion):** - Approximately 60 patients will be enrolled at the OBD determined in Phase I - Treatment will continue until disease progression, unacceptable toxicity, or a maximum of 24 months - Tumor assessments will be performed every 8 weeks according to RECIST v1.1 criteria
+
+## 2. PHASE I DOSE OPTIMIZATION
+
+### 2.1 U-BOIN Design Overview
+
+The U-BOIN design is a utility-based Bayesian optimal interval design specifically developed to identify the optimal biological dose (OBD) for targeted therapies and immunotherapies, rather than just the maximum tolerated dose (MTD). This design is particularly appropriate for CAN001 and bevacizumab combination therapy because:
+
+1.  Both toxicity and preliminary efficacy are considered simultaneously
+2.  The risk-benefit tradeoff is formally incorporated into the dose-finding process
+3.  It is operationally simple to implement while maintaining statistical rigor
+4.  It allows for adaptive decision-making based on accumulating data
+
+### 2.2 Implementation of U-BOIN Design
+
+#### 2.2.1 Design Parameters
+
+-   Target DLT rate (φ): 30%
+-   Maximum sample size for Phase I: 30 patients
+-   Starting dose level: 100 mg BID (Dose Level 1)
+-   Dose levels to be evaluated: 100 mg BID (DL1), 200 mg BID (DL2), 300 mg BID (DL3), 400 mg BID (DL4)
+-   Cohort size: 3 patients per cohort
+-   Efficacy will be evaluated based on RECIST v1.1 criteria (CR, PR, SD, PD)
+-   The utility function will be defined to reflect the risk-benefit tradeoff between toxicity and efficacy
+
+#### 2.2.2 Two-Stage Implementation
+
+**Stage I:** - Apply the standard BOIN design to quickly explore the dose space and collect preliminary toxicity and efficacy data - Enroll patients sequentially into different dose levels following BOIN escalation/de-escalation rules - Decision rules for dose escalation/de-escalation will be based on the observed DLT rate at the current dose compared to the pre-specified boundaries - This stage will continue until approximately 15-18 patients have been treated
+
+**Stage II:** - Update the posterior estimate of the utility for each dose after each cohort - Direct dose assignment to maximize the utility based on both toxicity and efficacy - Continue until all 30 patients have been treated or until early termination criteria are met
+
+#### 2.2.3 Utility Function
+
+The utility function will incorporate both toxicity and efficacy outcomes as follows:
+
+1.  Let (p<sub>j</sub>, q<sub>j</sub>) denote the toxicity and efficacy probabilities at dose level j
+
+2.  Define four possible outcomes:
+
+    -   Outcome 1: No toxicity and efficacy (utility = u<sub>1</sub>)
+    -   Outcome 2: No toxicity and no efficacy (utility = u<sub>2</sub>)
+    -   Outcome 3: Toxicity and efficacy (utility = u<sub>3</sub>)
+    -   Outcome 4: Toxicity and no efficacy (utility = u<sub>4</sub>)
+
+3.  The total utility for dose level j is: U(p<sub>j</sub>, q<sub>j</sub>) = u<sub>1</sub> × (1-p<sub>j</sub>) × q<sub>j</sub> + u<sub>2</sub> × (1-p<sub>j</sub>) × (1-q<sub>j</sub>) + u<sub>3</sub> × p<sub>j</sub> × q<sub>j</sub> + u<sub>4</sub> × p<sub>j</sub> × (1-q<sub>j</sub>)
+
+4.  The utility weights will be:
+
+    -   u<sub>1</sub> = 100 (No toxicity with efficacy - most desirable outcome)
+    -   u<sub>2</sub> = 40 (No toxicity without efficacy)
+    -   u<sub>3</sub> = 30 (Toxicity with efficacy)
+    -   u<sub>4</sub> = 0 (Toxicity without efficacy - least desirable outcome)
+
+These weights will be finalized prior to trial initiation based on investigator input and clinical considerations.
+
+#### 2.2.4 Dose Escalation/De-escalation Rules
+
+For the BOIN component in Stage I, the decision rules will be:
+
+1.  Escalate to the next dose level if the observed DLT rate at current dose ≤ λ<sub>e</sub>
+2.  De-escalate to the previous dose level if the observed DLT rate at current dose ≥ λ<sub>d</sub>
+3.  Stay at the current dose level if λ<sub>e</sub> \< observed DLT rate \< λ<sub>d</sub>
+
+Where λ<sub>e</sub> and λ<sub>d</sub> are the escalation and de-escalation boundaries calculated based on the target DLT rate φ = 30%:
+
+-   λ<sub>e</sub> = 0.236
+-   λ<sub>d</sub> = 0.358
+
+For Stage II, dose assignment will be determined by:
+
+1.  Calculate the posterior mean utility for each dose based on accumulated data
+2.  Assign the next cohort to the dose with the highest posterior mean utility, subject to safety constraints
+
+#### 2.2.5 OBD Selection
+
+At the end of the Phase I portion, the OBD will be selected as the dose with the highest posterior mean utility, subject to the following constraints:
+
+1.  The estimated DLT rate is ≤ 30%
+2.  At least 6 patients have been treated at that dose level
+3.  The dose shows evidence of preliminary efficacy
+
+If no dose satisfies these criteria, the highest dose with an estimated DLT rate ≤ 30% will be selected.
+
+#### 2.2.6 Safety Monitoring Rules
+
+The following safety rules will be implemented:
+
+1.  A dose level will be eliminated if the posterior probability that its DLT rate exceeds 30% is greater than 0.95
+2.  The trial will be terminated early if the posterior probability that the DLT rate of the lowest dose exceeds 30% is greater than 0.95
+
+### 2.3 Sample Size Justification for Phase I
+
+The sample size of up to 30 patients for the Phase I portion is based on extensive simulations of the U-BOIN design under various toxicity and efficacy scenarios. This sample size provides over 80% probability of selecting the correct OBD across a wide range of scenarios, while maintaining a low probability (\<10%) of excessive toxicity.
+
+The operating characteristics of the design were evaluated using simulations with 1,000 replications, and the results showed that the U-BOIN design with 30 patients provides good performance in terms of:
+
+1.  Accuracy of OBD selection
+2.  Patient allocation to doses near the OBD
+3.  Avoiding assignment of patients to overly toxic doses
+4.  Early termination probability when all doses are overly toxic
+
+## 3. STATISTICAL METHODS
+
+### 3.1 Sample Size Determination
+
+#### 3.1.1 Phase I
+
+As described above, up to 30 patients will be enrolled in the Phase I portion using the U-BOIN design.
+
+#### 3.1.2 Phase II
+
+For the Phase II portion, the sample size of 60 patients is based on the following assumptions: - The historical ORR with standard of care (bevacizumab alone maintenance) in HRD-positive patients who already had a response to platinum-based chemotherapy plus bevacizumab is approximately 15% (additional responses during maintenance phase) - A clinically meaningful improvement would be an increase in the ORR to 35% with CAN001 plus bevacizumab - Two-sided significance level (α) of 0.05 - Power of 90% - Dropout rate of approximately 10%
+
+This sample size will provide sufficient precision to estimate the ORR with a 95% confidence interval width of approximately ±12 percentage points.
+
+The sample size also ensures adequate power for key secondary endpoints, including providing preliminary PFS data to inform the design of a subsequent Phase III trial.
+
+### 3.2 Analysis Populations
+
+#### 3.2.1 Safety Population
+
+The Safety Population will include all patients who receive at least one dose of study treatment. This population will be used for all safety analyses.
+
+#### 3.2.2 DLT Evaluable Population
+
+The DLT Evaluable Population will include all patients in the Phase I portion who receive at least 75% of the planned doses of CAN001 during the DLT evaluation period (Cycle 1) or who experience a DLT. This population will be used for the U-BOIN analysis and OBD determination.
+
+#### 3.2.3 Pharmacokinetic Population
+
+The PK Population will include all patients who receive at least one dose of study treatment and have at least one evaluable PK sample.
+
+#### 3.2.4 Efficacy Evaluable Population
+
+The Efficacy Evaluable Population will include all patients who receive at least one dose of study treatment and have at least one post-baseline tumor assessment. This population will be used for all efficacy analyses.
+
+#### 3.2.5 Per-Protocol Population
+
+The Per-Protocol Population will include all patients in the Efficacy Evaluable Population who do not have major protocol deviations affecting efficacy assessment. This population will be used for sensitivity analyses of the primary efficacy endpoint.
+
+### 3.3 Statistical Analyses
+
+#### 3.3.1 General Considerations
+
+All statistical analyses will be performed using SAS version 9.4 or higher, or R version 4.0 or higher. Continuous variables will be summarized with descriptive statistics (n, mean, standard deviation, median, minimum, and maximum). Categorical variables will be summarized with frequencies and percentages.
+
+Unless otherwise specified, the significance level for statistical tests will be 0.05, and all tests will be two-sided. Confidence intervals will be presented at the 95% level.
+
+#### 3.3.2 Phase I OBD Determination Analysis
+
+The OBD will be determined using the U-BOIN design as described in Section 2. The posterior distributions of toxicity probability, efficacy probability, and utility for each dose level will be estimated using a multinomial-Dirichlet model.
+
+Summary statistics for these posterior distributions will be presented, including: - Posterior mean and 95% credible interval of the DLT rate for each dose level - Posterior mean and 95% credible interval of the efficacy rate for each dose level - Posterior mean and 95% credible interval of the utility for each dose level - Posterior probability of each dose being the OBD
+
+The final OBD selection will be presented along with the supporting evidence.
+
+#### 3.3.3 Primary Efficacy Analysis (Phase II)
+
+The primary efficacy endpoint for the Phase II portion is the objective response rate (ORR), defined as the proportion of patients achieving a complete response (CR) or partial response (PR) according to RECIST v1.1 criteria.
+
+ORR will be calculated as the number of patients with a confirmed CR or PR divided by the number of patients in the Efficacy Evaluable Population. The ORR and its 95% confidence interval will be estimated using the Clopper-Pearson method.
+
+The null hypothesis that the ORR is ≤15% will be tested against the alternative hypothesis that the ORR is \>15% using a one-sample binomial test.
+
+Response will be assessed every 8 weeks during the first year and every 12 weeks thereafter. Confirmation of response (CR or PR) will require a repeat assessment at least 4 weeks after the criteria for response are first met.
+
+A sensitivity analysis will be performed using the Per-Protocol Population to assess the robustness of the primary analysis.
+
+Subgroup analyses of ORR will be performed by: - BRCA mutation status (BRCA-mutated vs. non-BRCA HRD-positive) - Response to prior platinum-based therapy (complete vs. partial response) - Residual disease status after prior surgery (no residual disease vs. residual disease)
+
+#### 3.3.4 Secondary Efficacy Analyses
+
+**Progression-Free Survival (PFS):** - PFS will be defined as the time from study entry to the first documented disease progression (per RECIST v1.1) or death from any cause, whichever occurs first - Median PFS and the associated 95% confidence interval will be estimated using the Kaplan-Meier method - PFS rates at 6, 12, and 24 months will be calculated with 95% confidence intervals - PFS curves will be generated using the Kaplan-Meier method - Subgroup analyses will be performed by BRCA mutation status (BRCA-mutated vs. non-BRCA HRD-positive) - PFS data collection will follow the procedures outlined in the protocol's long-term follow-up plan
+
+**Duration of Response (DOR):** - DOR will be defined as the time from first documented response (CR or PR) to disease progression or death from any cause, whichever occurs first - Median DOR and the associated 95% confidence interval will be estimated using the Kaplan-Meier method - DOR analysis will be performed on the subset of patients who achieve a confirmed CR or PR - DOR data collection will continue per protocol even after the primary ORR analysis is completed
+
+**Overall Survival (OS):** - OS will be defined as the time from study entry to death from any cause - Median OS and the associated 95% confidence interval will be estimated using the Kaplan-Meier method - OS rates at 12 and 24 months will be calculated with 95% confidence intervals - OS curves will be generated using the Kaplan-Meier method - OS data will be collected during the long-term follow-up period as specified in the protocol - Note: OS data are expected to be immature at the time of primary analysis and will be analyzed according to the timepoints specified in the protocol
+
+**Disease Control Rate (DCR):** - DCR will be defined as the proportion of patients achieving a CR, PR, or stable disease (SD) for at least 16 weeks - DCR and its 95% confidence interval will be calculated using the Clopper-Pearson method
+
+#### 3.3.5 Safety Analyses
+
+Safety analyses will be performed on the Safety Population. All adverse events (AEs) will be coded using the Medical Dictionary for Regulatory Activities (MedDRA) and graded according to the National Cancer Institute Common Terminology Criteria for Adverse Events (NCI CTCAE) v5.0.
+
+The following safety analyses will be performed: - Summary of all treatment-emergent adverse events (TEAEs) - Summary of TEAEs by severity grade - Summary of treatment-related AEs - Summary of serious adverse events (SAEs) - Summary of AEs leading to dose modification or treatment discontinuation - Summary of deaths and causes of death - Summary of laboratory abnormalities - Summary of vital signs - Summary of ECOG performance status
+
+AEs of special interest for PARP inhibitors will be specifically analyzed, including: - Myelosuppression (anemia, neutropenia, thrombocytopenia) - Fatigue - Nausea/vomiting - MDS/AML - Pneumonitis
+
+AEs of special interest for bevacizumab will also be specifically analyzed, including: - Hypertension - Proteinuria - Thromboembolic events - Hemorrhage - Gastrointestinal perforation - Wound healing complications
+
+## 4. PHARMACOKINETIC AND PHARMACODYNAMIC ANALYSES
+
+### 4.1 Pharmacokinetic Assessments
+
+#### 4.1.1 PK Sampling Schedule
+
+**Phase I:** - Intensive PK sampling will be conducted on: - Cycle 1 Day 1: Pre-dose, 0.5, 1, 2, 4, 6, 8, and 12 hours post-dose - Cycle 1 Day 15: Pre-dose, 0.5, 1, 2, 4, 6, 8, and 12 hours post-dose - Cycle 2 Day 1: Pre-dose sample only
+
+**Phase II:** - Sparse PK sampling will be conducted on: - Cycle 1 Day 1: Pre-dose, 2, and 6 hours post-dose - Cycle 1 Day 15: Pre-dose and 2 hours post-dose - Cycle 2 Day 1: Pre-dose sample only - Cycles 3 and beyond: Pre-dose sample on Day 1 of each cycle
+
+#### 4.1.2 PK Parameters
+
+The following PK parameters will be calculated using non-compartmental analysis for CAN001: - Maximum observed plasma concentration (Cmax) - Time to maximum concentration (Tmax) - Area under the plasma concentration-time curve from time zero to the last measurable concentration (AUC0-last) - Area under the plasma concentration-time curve from time zero to 12 hours (AUC0-12) - Area under the plasma concentration-time curve from time zero to infinity (AUC0-inf) - Terminal elimination half-life (t1/2) - Apparent oral clearance (CL/F) - Apparent volume of distribution (Vz/F) - Accumulation ratio (Racc) for Cmax and AUC0-12
+
+#### 4.1.3 PK Statistical Analysis
+
+PK parameters will be summarized with descriptive statistics (n, mean, standard deviation, coefficient of variation, geometric mean, median, minimum, and maximum) for each dose level.
+
+Dose proportionality of CAN001 will be assessed using a power model: ln(PK parameter) = α + β × ln(dose) + error, where β = 1 indicates perfect dose proportionality. The 90% confidence interval for β will be calculated.
+
+The effect of bevacizumab on CAN001 PK will be evaluated by comparing PK parameters between CAN001 alone and CAN001 in combination with bevacizumab using a mixed-effects model.
+
+### 4.2 Pharmacodynamic Assessments
+
+#### 4.2.1 PD Sampling Schedule
+
+**PBMC Samples:** - Cycle 1 Day 1: Pre-dose, 2, 6, and 24 hours post-dose - Cycle 1 Day 15: Pre-dose, 2, and 6 hours post-dose - Cycle 2 Day 1: Pre-dose
+
+**Tumor Biopsies (optional):** - Screening (archival tissue) - Cycle 1 Day 15-21 - At the time of progression (optional)
+
+#### 4.2.2 PD Biomarkers
+
+The following PD biomarkers will be assessed:
+
+**Target Engagement Biomarkers:** - PARP enzyme activity in PBMCs - PAR levels in PBMCs and tumor biopsies
+
+**Mechanism of Action Biomarkers:** - γH2AX foci (marker of DNA double-strand breaks) - RAD51 foci (marker of homologous recombination) - pS345-CHK1 (marker of DNA damage response)
+
+**Downstream Effect Biomarkers:** - Tumor hypoxia markers (CA IX, HIF-1α) - Angiogenic markers (VEGF, VEGFR) - Circulating tumor DNA (ctDNA) levels
+
+#### 4.2.3 PD Statistical Analysis
+
+PD parameters will be summarized with descriptive statistics for each dose level. The relationship between CAN001 dose/exposure and PD effects will be explored using appropriate graphical methods and regression models.
+
+The time course of PD effects will be characterized, and the relationship between PD effects and clinical outcomes will be explored using correlation analyses and Cox proportional hazards models.
+
+### 4.3 Exposure-Response Analysis
+
+#### 4.3.1 Exposure-Response for Efficacy
+
+The relationship between CAN001 exposure metrics (Cmax, AUC) and efficacy endpoints (ORR, PFS) will be explored using appropriate methods, including: - Logistic regression for binary endpoints (e.g., response) - Cox proportional hazards models for time-to-event endpoints
+
+#### 4.3.2 Exposure-Response for Safety
+
+The relationship between CAN001 exposure metrics and safety endpoints (selected AEs, laboratory abnormalities) will be explored using: - Logistic regression for binary safety endpoints - Ordered categorical regression for AE severity grades
+
+#### 4.3.3 PK/PD Modeling
+
+Population PK and PK/PD modeling will be performed to: - Characterize the dose-concentration-response relationships - Identify significant covariates affecting PK and PD parameters - Simulate alternative dosing regimens - Provide a scientific basis for dose selection and individualization
+
+A population PK model will be developed using nonlinear mixed-effects modeling (NONMEM) to describe the disposition of CAN001 in plasma. The model will incorporate both dense (Phase I) and sparse (Phase II) PK data. Covariates (demographic, laboratory, and disease characteristics) will be evaluated for their effects on PK parameters.
+
+PK/PD models will be developed to link CAN001 exposure to biomarker responses and clinical outcomes. These models will help establish the exposure-response relationships required by FDA and support future dose recommendations.
+
+## 5. EXPLORATORY ANALYSES
+
+### 5.1 Biomarker Analyses
+
+#### 5.1.1 Predictive Biomarkers
+
+The following potential predictive biomarkers will be explored: - BRCA1/2 mutation status (germline vs. somatic) - HRD score components (LOH, TAI, LST) - Mutations in other HRR pathway genes (e.g., ATM, PALB2, RAD51C/D) - CCNE1 amplification - BRCAness gene expression signature - PARPi sensitivity gene expression signature
+
+The association between these biomarkers and efficacy outcomes will be evaluated using appropriate statistical methods, including: - Stratified Kaplan-Meier analyses - Cox proportional hazards models - Logistic regression models
+
+#### 5.1.2 Pharmacogenomic Analyses
+
+Genetic polymorphisms in drug-metabolizing enzymes and transporters will be assessed to evaluate their impact on CAN001 PK and safety: - CYP3A4/5 polymorphisms - P-glycoprotein (ABCB1) polymorphisms - BCRP (ABCG2) polymorphisms
+
+The association between these polymorphisms and PK parameters or AE incidence will be evaluated using appropriate statistical methods.
+
+### 5.2 Patient-Reported Outcomes
+
+Patient-reported outcomes (PROs) will be assessed using: - EORTC QLQ-C30 (quality of life) - EORTC QLQ-OV28 (ovarian cancer-specific module) - EQ-5D-5L (health utility)
+
+PRO scores will be summarized at each assessment timepoint and change from baseline will be evaluated. The association between PRO measures and clinical outcomes will be explored.
+
+### 5.3 Dose Optimization Analyses
+
+Based on the integrated PK, PD, safety, and efficacy data, the following dose optimization analyses will be performed: - Exploration of alternative dosing regimens (e.g., different doses or schedules) - Identification of patient subgroups requiring dose modifications - Evaluation of dose intensity-outcome relationships
+
+Simulation-based approaches using the developed PK/PD models will be employed to support these analyses.
+
+## 6. EARLY STOPPING RULES
+
+The study may be stopped early for: - Unacceptable toxicity: If the rate of serious, treatment-related AEs exceeds a prespecified threshold - Futility: If the interim analysis suggests that the study is unlikely to meet its primary endpoint - Overwhelming efficacy: If the interim analysis suggests a highly significant benefit over historical controls
+
+The specific stopping boundaries will be detailed in the DMC charter.
+
+## 7. HANDLING OF MISSING DATA
+
+### 7.1 Missing Efficacy Data
+
+For the primary analysis of ORR, patients without post-baseline tumor assessments will be considered non-responders unless there is clear clinical evidence of progressive disease, in which case they will be classified as having progressive disease.
+
+Sensitivity analyses will be performed to assess the robustness of the primary analysis, including: - Analysis limited to patients with at least one post-baseline tumor assessment - Analysis accounting for early discontinuation due to toxicity - Multiple imputation methods for handling missing data
+
+For secondary time-to-event endpoints (PFS, OS, DOR), patients without a documented event who are lost to follow-up will be censored at the date of their last assessment. Various censoring rules will be explored in sensitivity analyses to assess the robustness of the results.
+
+### 7.2 Missing PK/PD Data
+
+For PK analyses, samples with concentrations below the lower limit of quantification (LLOQ) will be handled as follows: - Samples before the first quantifiable concentration will be treated as zero - Samples between quantifiable concentrations will be treated as missing - Samples after the last quantifiable concentration will be treated as missing
+
+For calculation of summary statistics, values below LLOQ will be treated as zero.
+
+Missing PK/PD data will not be imputed. Population PK and PK/PD modeling approaches inherently handle missing or sparse data through mixed-effects modeling techniques.
+
+## 8. REGULATORY CONSIDERATIONS
+
+### 8.1 Compliance with FDA Guidance
+
+This SAP has been developed in accordance with the FDA guidance "Exposure-Response Relationships --- Study Design, Data Analysis, and Regulatory Applications" and ICH E4 "Dose-Response Information to Support Drug Registration".
+
+The PK/PD strategy outlined in this SAP aims to establish the scientific basis for the exposure-response relationship as required by FDA, including: - Characterization of dose-concentration-time relationships - Assessment of concentration-response relationships for efficacy and safety - Evaluation of the impact of intrinsic and extrinsic factors on exposure-response - Development of models to support dose selection and individualization
+
+### 8.2 Data Presentation for Regulatory Submission
+
+For regulatory submissions, PK/PD and exposure-response data will be presented in accordance with the FDA guidance and will include: - Comprehensive summaries of PK and PD parameters - Graphical presentations of exposure-response relationships - Results of population PK and PK/PD modeling - Simulations of alternative dosing regimens - Analyses supporting dose selection and individualization
+
+## 9. POST-TREATMENT FOLLOW-UP ASSESSMENTS
+
+This section outlines the key considerations for post-treatment follow-up assessments needed to collect data for secondary time-to-event endpoints (PFS and OS). Detailed procedures are specified in the study protocol.
+
+### 9.1 Follow-Up Assessments for Secondary Endpoints
+
+The study protocol specifies a structured follow-up plan after patients complete or discontinue study treatment. This follow-up is essential for collecting complete data on the secondary endpoints of PFS and OS, which require longer observation periods than the primary ORR endpoint.
+
+#### 9.1.1 Progression-Free Survival Follow-Up
+
+For PFS assessment, patients who discontinue study treatment without documented disease progression will continue to have tumor assessments according to the schedule specified in the protocol (typically every 8-12 weeks) until: - Disease progression is documented - Initiation of subsequent anti-cancer therapy - Patient withdrawal of consent for follow-up - Death - End of study
+
+These continued assessments ensure complete collection of PFS data beyond the primary ORR analysis timepoint.
+
+#### 9.1.2 Overall Survival Follow-Up
+
+After disease progression is documented, patients will enter the survival follow-up phase. During this phase: - Patients will be contacted every 12 weeks (±2 weeks) per protocol to assess survival status - Information on subsequent anti-cancer therapies will be collected - Survival follow-up will continue until: - Death - Patient withdrawal of consent for follow-up - Lost to follow-up - End of study
+
+#### 9.1.3 Timing of Secondary Endpoint Analyses
+
+The protocol specifies predefined timepoints for the analysis of time-to-event secondary endpoints: - An initial analysis of PFS will be conducted approximately 12 months after the last patient is enrolled - An updated PFS analysis will be conducted when approximately 70% of PFS events have occurred - The final PFS analysis will be conducted when approximately 90% of PFS events have occurred - Interim OS analyses will be conducted at the time of PFS analyses - The final OS analysis will be conducted when approximately 70% of OS events have occurred or at study completion, whichever occurs first
+
+The precise timing of these analyses may be adjusted based on the observed event rates.
+
+## 10. REFERENCES
+
+1.  FDA Guidance for Industry: Exposure-Response Relationships --- Study Design, Data Analysis, and Regulatory Applications (2003)
+
+2.  Ray-Coquard I, et al. (2019). Olaparib plus Bevacizumab as First-Line Maintenance in Ovarian Cancer. N Engl J Med, 381(25), 2416-2428.
+
+3.  Coleman RL, et al. (2017). Rucaparib maintenance treatment for recurrent ovarian carcinoma after response to platinum therapy (ARIEL3): a randomised, double-blind, placebo-controlled, phase 3 trial. Lancet, 390(10106), 1949-1961.
+
+4.  Moore K, et al. (2018). Maintenance Olaparib in Patients with Newly Diagnosed Advanced Ovarian Cancer. N Engl J Med, 379(26), 2495-2505.
+
+5.  González-Martín A, et al. (2019). Niraparib in Patients with Newly Diagnosed Advanced Ovarian Cancer. N Engl J Med, 381(25), 2391-2402.
+
+6.  Zhou Y, Lee JJ, Yuan Y. (2019). A utility-based Bayesian optimal interval (U-BOIN) phase I/II design to identify the optimal biological dose for targeted and immune therapies. Stat Med, 38(28), 5299-5316.
+
+7.  Liu S, Yuan Y. (2015). Bayesian optimal interval designs for phase I clinical trials. Journal of the Royal Statistical Society: Series C (Applied Statistics), 64(3), 507-523.
+
+8.  Lin R, Yin G. (2017). Bayesian optimal interval designs for dose finding in drug-combination trials. Stat Methods Med Res, 26(5), 2155-2167.
+
+9.  Yuan Y, et al. (2016). Bayesian optimal interval design: a simple and well-performing design for phase I oncology trials. Clin Cancer Res, 22(17), 4291-4301.
+
+10. Piantadosi S. (2017). Clinical Trials: A Methodologic Perspective, 3rd Edition. Wiley.
+
+## 11. APPENDICES
+
+### Appendix A: Schedule of Assessments
+
+\[Detailed schedule of assessments to be included\]
+
+### Appendix B: Definition of Dose-Limiting Toxicities
+
+Dose-limiting toxicities (DLTs) are defined as any of the following events occurring during the DLT evaluation period (Cycle 1) that are considered related to study treatment:
+
+**Hematologic DLTs:** - Grade 4 neutropenia lasting \>7 days - Febrile neutropenia (Grade 3 or 4) - Grade 4 thrombocytopenia - Grade 3 thrombocytopenia with bleeding - Grade 4 anemia
+
+**Non-hematologic DLTs:** - Any Grade 3 or 4 non-hematologic toxicity, except: - Grade 3 nausea, vomiting, or diarrhea that resolves to ≤Grade 2 within 48 hours with optimal medical management - Grade 3 fatigue that resolves to ≤Grade 2 within 7 days - Asymptomatic Grade 3 laboratory abnormalities that resolve to ≤Grade 2 within 7 days - Grade 2 toxicity that, in the investigator's judgment, requires dose reduction or treatment delay \>7 days
+
+**Bevacizumab-specific DLTs:** - Grade 4 hypertension - Grade 3 hypertension that is not controlled by oral medications - Grade 3 or 4 proteinuria - Any grade arterial thromboembolic event - Grade 3 or 4 venous thromboembolic event - Gastrointestinal perforation, GI fistula, or intra-abdominal abscess (any grade) - Grade 3 or 4 hemorrhage - Grade 4 PRES (posterior reversible encephalopathy syndrome)
+
+### Appendix C: RECIST v1.1 Criteria for Tumor Response
+
+\[RECIST v1.1 criteria to be included\]
+
+### Appendix D: HRD Testing Methodology
+
+\[Description of HRD testing methodology to be included\]
+
+### Appendix E: U-BOIN Implementation Details
+
+#### E.1 Decision Tables for Dose Escalation/De-escalation
+
+The following tables provide the dose escalation and de-escalation rules for the U-BOIN design based on the target DLT rate of 30%:
+
+**Table E.1: Dose Escalation/De-escalation Rules Based on Observed DLTs**
+
+| Number of Patients | Escalate if Number of DLTs ≤ | Stay if Number of DLTs = | De-escalate if Number of DLTs ≥ |
+|-----------------|------------------|-----------------|---------------------|
+| 3                  | 0                            | 1                        | 2                               |
+| 6                  | 1                            | 2                        | 3                               |
+| 9                  | 2                            | 3                        | 4                               |
+| 12                 | 3                            | 4-5                      | 6                               |
+| 15                 | 4                            | 5-6                      | 7                               |
+| 18                 | 5                            | 6-7                      | 8                               |
+| 21                 | 6                            | 7-8                      | 9                               |
+
+**Table E.2: Selection of OBD Based on Utility**
+
+\[Utility calculation table to be included\]
+
+#### E.2 Software Implementation
+
+For implementing the U-BOIN design, the following software will be used: - R package 'BOIN' (version 2.7.1 or later) - Custom R scripts for implementing the utility-based decision rules - EAST (version 6.5 or later) for conducting simulations to evaluate the operating characteristics
+
+The R code for implementing the U-BOIN design will be documented and validated prior to trial initiation.
+
+### Appendix F: Statistical Analysis Software Code
+
+\[Example SAS/R code for key analyses to be included\]
