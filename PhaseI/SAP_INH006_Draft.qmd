@@ -452,7 +452,7 @@ The following tables provide the dose escalation and de-escalation rules for the
 **Table E.1: Dose Escalation/De-escalation Rules Based on Observed DLTs**
 
 | Number of Patients | Escalate if Number of DLTs ≤ | Stay if Number of DLTs = | De-escalate if Number of DLTs ≥ |
-|-----------------|------------------|-----------------|---------------------|
+|--------------------|------------------------------|--------------------------|---------------------------------|
 | 3                  | 0                            | 1                        | 2                               |
 | 6                  | 1                            | 2                        | 3                               |
 | 9                  | 2                            | 3                        | 4                               |
